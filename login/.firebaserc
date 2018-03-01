@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "fir-demo-project",
+    "staging": "online-food-order-758b0"
+  }
+}
