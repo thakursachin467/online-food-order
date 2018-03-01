@@ -7,18 +7,14 @@
 	<link rel="stylesheet" type="text/css" href="login.css">
 </head>
 <body>
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script type="text/javascript" src="login.js"></script>
 
-	<div class="container fill">
-		<div class="LogIn">
+	<div class="container ">
+		<div class="LogIn" >
+      <div id="loginpage">
       <h1>Login</h1>
-      <input type="text" placeholder="Username"/>
-      <input type="text" placeholder="Password"/>
-      <button>Login</button>
+      <input type="text" placeholder="Username" id="email" />
+      <input type="password" placeholder="Password" id="password" />
+      <button onclick="login()">Login</button>
       <p>Not a member? <a href="#" data-toggle="modal" data-target="#signup">Sign Up</a></p>
       <hr style="border-top: dotted 2px red;" />
       <p>
@@ -28,6 +24,32 @@
 <a class="btn btn-primary social-login-btn social-google" href="/auth/google"><i class="fa fa-google-plus"></i></a>
 </p>
     </div>
+  </div>
+
+    <div class ="signedin">
+      <div id="signed">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top navbar-light bg-faded">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+      </li>
+     
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <button class="btn btn-outline-success my-2 my-sm-0 logout"  onclick="logout()">logOut</button>
+    </form>
+  </div>
+</nav>
+      
+
+
+</div>
+    </div>
+
 
 
 
@@ -45,18 +67,19 @@
         <div class="signup">
       <h1>SignUp</h1>
       <form onSubmit="return validation()">
+      <input type="text"  placeholder="name" id="firstname">
       <input type="email" placeholder="Email" id="signupemail">
       <input type="password" placeholder="Password" id="signuppas">
       <input type="password" placeholder="Retype-Password" id="signuppas2" onfocusout="passwordvalidation()">
-      <input type="submit" name="submit">
+      <input type="submit" name="submit" onclick="createuser()">
     </form>
       <hr style="border-top: dotted 1px;" />
           <p>
-<a class="btn btn-primary social-login-btn social-facebook"><i class="fa fa-facebook"></i></a>
-<a class="btn btn-primary social-login-btn social-twitter" ><i class="fa fa-twitter"></i></a>
-<a class="btn btn-primary social-login-btn social-linkedin" href="/auth/linkedin"><i class="fa fa-linkedin"></i></a>
-<a class="btn btn-primary social-login-btn social-google" href="/auth/google"><i class="fa fa-google-plus"></i></a>
-</p>
+    <a class="btn btn-primary social-login-btn social-facebook"><i class="fa fa-facebook"></i></a>
+    <a class="btn btn-primary social-login-btn social-twitter" ><i class="fa fa-twitter"></i></a>
+    <a class="btn btn-primary social-login-btn social-linkedin" href="/auth/linkedin"><i class="fa fa-linkedin"></i></a>
+    <a class="btn btn-primary social-login-btn social-google" href="/auth/google"><i class="fa fa-google-plus"></i></a>
+    </p>
       </div>
       
       </div>
@@ -69,5 +92,12 @@
 		
 
 	</div>
+
+  <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript" src="login.js"></script>
 </body>
 </html>
