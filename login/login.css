@@ -71,6 +71,11 @@ html, body {
 
     }
 
+.page-footer {
+   margin-top: 10px;
+  background: black;
+  color: orange;
+}
 
   .LogIn h1{
   font-family:Helvetica;

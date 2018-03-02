@@ -6,6 +6,7 @@
     storageBucket: "online-food-order-758b0.appspot.com",
     messagingSenderId: "908019907590"
   };
+
   firebase.initializeApp(config);
   var provider = new firebase.auth.GoogleAuthProvider();
   var provider1 = new firebase.auth.FacebookAuthProvider();
@@ -14,7 +15,7 @@
 
 
 $(document).ready(function() {
-    var urls=["pizza.jpg","burger.jpg","dosa.jpg","dal.jpg"];
+    var urls=["login/pizza.jpg","login/burger.jpg","login/dosa.jpg","login/dal.jpg"];
     $('body').css({
       'background-image':'url('+urls[0]+')',
       'background-repeat': 'no-repeat',
@@ -45,8 +46,6 @@ if(password2!=password) {
 }
 }
 
-
-
   firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     document.getElementById('loginpage').style.display="none";
@@ -57,7 +56,7 @@ if(password2!=password) {
    
     document.getElementById('loginpage').style.display="block";
     document.getElementById('signed').style.display="none";
-    
+
   }
 });
 
@@ -132,6 +131,7 @@ function facebooksignin() {
   var email = error.email;
   // The firebase.auth.AuthCredential type that was used.
   var credential = error.credential;
+  alert(errorMessage);
   // ...
 });
 }
@@ -153,6 +153,7 @@ function twittersignin() {
   var email = error.email;
   // The firebase.auth.AuthCredential type that was used.
   var credential = error.credential;
+  alert(errorMessage);
   // ...
 });
 }
