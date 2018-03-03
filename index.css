@@ -1,5 +1,6 @@
 html ,body {
 	height: 100%;
+	background-image: url("bg.jpg");
 }
 
 .container1 {
@@ -21,7 +22,7 @@ html ,body {
 
 .image-1 { 
    position: relative; 
-   
+
   
 }
 
@@ -34,11 +35,32 @@ html ,body {
    
 }
 
+.image-1 p{
+	position: absolute; 
+	top: 100px; 
+   left: 40px;
+   visibility: hidden;
+   font-size: 30px;
+   color: Yellow;
+
+}
+
 
 .image-1 a img {
 	cursor: default;
 }
 
+
+.image-2 {
+	border: 1px solid black;
+	box-shadow: 2px 3px 	#808080;
+}
+
+#btnSearch,
+#btnClear{
+    display: inline-block;
+    vertical-align: top;
+}
 
 
 @media only screen and (max-width: 465px) {
