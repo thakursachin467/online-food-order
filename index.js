@@ -1,5 +1,6 @@
-$(window).scroll(function(){
-    if ($(window).scrollTop() >= 840) {
+
+$('body').scroll(function(){
+    if ($('body').scrollTop() >= 840) {
        $('.secondnav').css("visibility","visible");
        $('.firstnav').css("visibility","hidden");
     }

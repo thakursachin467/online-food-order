@@ -15,24 +15,12 @@
 
 
 $(document).ready(function() {
-    var urls=["login/pizza.jpg","login/burger.jpg","login/dosa.jpg","login/dal.jpg"];
+    var urls=["login/pizza.jpg"];
     $('body').css({
-      'background-image':'url('+urls[0]+')',
-      'background-repeat': 'no-repeat',
-      'background-size': 'cover'
-});
-setInterval(function() { 
-    for(var i=0;i<urls.length;i++){
-      
-    $('body').css({
-      'background-image':'url('+urls[i]+')',
-      'background-repeat': 'no-repeat',
-      'background-size': 'cover'
-}); 
+      'background-image':'url('+urls[0]+')'
+    });
 
-    }
-}, 3000);
-    
+
 
 
 });
@@ -50,10 +38,10 @@ if(password2!=password) {
   if (user) {
     document.getElementById('loginpage').style.display="none";
     document.getElementById('signed').style.display="block";
-    
+
 
   } else {
-   
+
     document.getElementById('loginpage').style.display="block";
     document.getElementById('signed').style.display="none";
 
@@ -64,8 +52,14 @@ if(password2!=password) {
 
     var password=document.getElementById('signuppas').value;
     var email=document.getElementById('signupemail').value;
-    window.alert(password);
-    firebase.auth().createUserWithEmailAndPassword(email, password);
+    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  alert(errorMessage);
+  // ...
+});
+
   }
 
 
@@ -80,7 +74,7 @@ if(password2!=password) {
   // ...
 
   window.alert(errorMessage);
-  
+
 
 });
 
@@ -157,6 +151,3 @@ function twittersignin() {
   // ...
 });
 }
-
-
-

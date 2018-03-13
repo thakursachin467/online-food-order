@@ -13,6 +13,16 @@ html ,body {
 	overflow-x: hidden;
 }
 
+.mydiv {
+
+  height: 100%;
+}
+
+video {
+    width: 100%;
+    height: auto;
+}
+
 .container1 {
 	height: 100%;
 	margin-top: 40px;
@@ -20,8 +30,8 @@ html ,body {
 
 .page-footer {
    margin-top: 10px;
-	background: black;
-	color: orange;
+	background: #343A40;
+	color: #9A9DA0;
 }
 
 .secondnav {
@@ -153,14 +163,11 @@ html ,body {
   background-attachment:fixed;
 }
 
-.pimg1{
 
-  min-height:100vh;
-}
 
 .pimg4 {
 	background-image:url('img/image2.jpg');
-	
+
 	min-height:100vh;
 }
 
